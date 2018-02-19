@@ -99,12 +99,18 @@ public class GameBoard implements EventObservable{
 		// note that ghosts should be added to the four center-most columns of the 
 		// row that is one less than the center. The ghosts should occupy the four 
 		// center columns
-		
-						
+	
+	
+	}
+	
+	/**
+	 * Starts the timer that controls the ghost's animation.
+	 */
+	public void startAnimationTimer() {
 		// set up timer to move ghosts
-		int delay = 3000;   // delay for 3 sec.
-		int interval = 250;  // iterate every 25/100ths of a sec.
-		if(timer!=null) {
+		int delay = 2000; // delay for 2 sec.
+		int interval = 250; // iterate every 25/100ths of a sec.
+		if (timer != null) {
 			timer.cancel();
 		}
 		timer = new Timer();
@@ -113,7 +119,7 @@ public class GameBoard implements EventObservable{
 				advanceGhosts();
 			}
 		};
-		
+
 		timer.scheduleAtFixedRate(timerTask, delay, interval);
 	}
 	
@@ -121,7 +127,7 @@ public class GameBoard implements EventObservable{
 	 * Function called from the timer that animates the ghosts.
 	 * For each ghost, gets the next move in the path and executes it.
 	 */
-	private void advanceGhosts() {
+	public void advanceGhosts() {
 		// TODO: Assignment 5: loop through each ghost and move them forward one step
 		// in their paths. (Create a path for the ghost if it doesn't have one already
 		// or if their path has no more steps in it.)

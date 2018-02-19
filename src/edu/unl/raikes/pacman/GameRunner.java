@@ -79,11 +79,12 @@ public class GameRunner implements KeyListener, EventObserver{
 		frame.pack();
 		frame.setLocationRelativeTo(null);
 
-		// make it visible
+		// make it visible and start the timer
 		EventQueue.invokeLater(new Runnable() {
 			@Override
 			public void run() {
 				frame.setVisible(true);
+				gameBoard.startAnimationTimer();
 			}
 		});
 	}

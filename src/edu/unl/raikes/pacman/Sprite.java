@@ -31,7 +31,7 @@ public abstract class Sprite extends JComponent {
 		try {
 		    img = ImageIO.read(new File(filepath));
 		} catch (IOException e) {
-			System.out.println(e.getStackTrace());
+			e.printStackTrace();
 			System.exit(0);
 		}
 		return img;
